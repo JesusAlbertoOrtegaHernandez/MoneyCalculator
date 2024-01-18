@@ -24,12 +24,12 @@ public class MainSwing extends JFrame {
                 main.currencyDialog().define(currencies),
                 new MockExchangeRate(),
                 main.moneyDisplay());
-        main.add("exchange money", command);
+        main.add("Money Calculator API", command);
         main.setVisible(true);
     }
 
     public MainSwing() throws HeadlessException {
-        this.setTitle("Money calculator");
+        this.setTitle("Money Calculator API");
         this.setSize(800,600);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -41,8 +41,9 @@ public class MainSwing extends JFrame {
     }
 
     private Component toolbar() {
-        JButton button = new JButton("calculate");
-        button.addActionListener(e -> commands.get("exchange money").execute());
+        JButton button = new JButton("Calculate Exchange rate");
+        button.addActionListener(e -> commands.get("Money Calculator API").execute());
+        button.setForeground(Color.BLUE);
         return button;
     }
 
